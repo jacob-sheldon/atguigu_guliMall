@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jacob.gulimall.product.entity.CommentReplayEntity;
 import com.jacob.gulimall.product.service.CommentReplayService;
-import com.jacob.common.utils.PageUtils;
-import com.jacob.common.utils.R;
+import com.jacob.gulimall.common.utils.PageUtils;
+import com.jacob.gulimall.common.utils.R;
 
 
 
@@ -22,9 +22,10 @@ import com.jacob.common.utils.R;
  *
  * @author jacob
  * @email jacobsheldon1991@gmail.com
- * @date 2023-01-10 15:16:59
+ * @date 2023-01-10 18:27:28
  */
 @RestController
+@RequestMapping("product/commentreplay")
 public class CommentReplayController {
     @Autowired
     private CommentReplayService commentReplayService;

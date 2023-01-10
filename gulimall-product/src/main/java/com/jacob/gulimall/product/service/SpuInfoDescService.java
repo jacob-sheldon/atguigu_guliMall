@@ -1,7 +1,7 @@
 package com.jacob.gulimall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jacob.common.utils.PageUtils;
+import com.jacob.gulimall.common.utils.PageUtils;
 import com.jacob.gulimall.product.entity.SpuInfoDescEntity;
 
 import java.util.Map;
