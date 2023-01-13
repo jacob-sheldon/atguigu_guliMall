@@ -1,9 +1,13 @@
 package com.jacob.gulimall.coupon.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +29,29 @@ import com.jacob.gulimall.common.utils.R;
  * @date 2023-01-10 18:33:39
  */
 @RestController
+@RefreshScope
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @RequestMapping("/member/coupons")
+    public R memberCoupons() {
+        CouponEntity coupon = new CouponEntity();
+        coupon.setCouponName("保时捷减1000元");
+        return R.ok().put("coupons", Collections.singletonList(coupon));
+    }
+
+    @Value("${coupon1.user.name}")
+    private String name;
+
+    @Value("${coupon.user.age}")
+    private Integer age;
+
+    @RequestMapping("/config")
+    public R config() {
+        return R.ok().put("name", name).put("age", age);
+    }
 
     /**
      * 列表

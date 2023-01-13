@@ -37,6 +37,7 @@ public class CouponEntity implements Serializable {
 	 * ?????
 	 */
 	private String couponName;
+
 	/**
 	 * ??
 	 */
