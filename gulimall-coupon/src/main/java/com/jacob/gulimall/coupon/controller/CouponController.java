@@ -42,7 +42,7 @@ public class CouponController {
         return R.ok().put("coupons", Collections.singletonList(coupon));
     }
 
-    @Value("${coupon1.user.name}")
+    @Value("${coupon.user.name}")
     private String name;
 
     @Value("${coupon.user.age}")
